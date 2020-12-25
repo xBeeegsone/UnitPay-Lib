@@ -1,8 +1,8 @@
 from unitpay import unitpay_lib
-from unitpay.examples import default_provider
+from unitpay.examples import example_provider
 from unitpay.protocol import unitpay_request_controller
 
-unitpay_lib.provider = default_provider
+unitpay_lib.provider = example_provider
 controller: unitpay_request_controller = unitpay_request_controller
 
 check = controller.handle("52.19.56.234", args={

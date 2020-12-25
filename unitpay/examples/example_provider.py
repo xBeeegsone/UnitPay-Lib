@@ -6,7 +6,7 @@ def payment_exists(account: str) -> bool:
 
 
 def check_sum(account: str, sum_param: float, currency: str) -> bool:
-    return currency == "RUB" and sum_param >= 1.00
+    return currency == "RUB" and sum_param == 1337.00
 
 
 def update_payment_status(account: str, status: str) -> any:
@@ -18,5 +18,5 @@ def give_item(account: str) -> bool:
     return True
 
 
-class default_provider(iprovider):
+class example_provider(iprovider):
     pass
