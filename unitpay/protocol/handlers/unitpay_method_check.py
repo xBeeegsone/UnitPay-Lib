@@ -8,7 +8,7 @@ def update_and_get_result(account: str, reason: str):
     return unitpay_response.error(reason)
 
 
-def handle(ip, args) -> any:
+def handle(ip: str, args) -> dict:
     account: str = args["params[account]"]
     sum_param: float = args["params[sum]"]
     currency: str = args["params[orderCurrency]"]

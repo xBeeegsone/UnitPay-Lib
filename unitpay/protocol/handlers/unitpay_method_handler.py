@@ -1,4 +1,4 @@
-def handle(ip, args) -> any:
+def handle(ip: str, args) -> dict:
     pass
 
 

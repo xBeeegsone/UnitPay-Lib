@@ -3,7 +3,10 @@ from unitpay.examples import example_provider
 from unitpay.protocol import unitpay_request_controller
 
 unitpay_lib.provider = example_provider
+unitpay_lib.PUBLIC_KEY = "EXAMPLE-KEY-1337"
+
 controller: unitpay_request_controller = unitpay_request_controller
+
 
 check = controller.handle("52.19.56.234", args={
     "method": "check",
@@ -29,6 +32,7 @@ error = controller.handle("52.19.56.234", args={
     "params[orderSum]": 10.00,
     "params[errorMessage]": "Недостаточно средств"
 })
+
 
 print("")
 print("")

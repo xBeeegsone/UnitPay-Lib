@@ -3,7 +3,7 @@ from unitpay.protocol.handlers.unitpay_method_handler import method_handler
 from unitpay import unitpay_lib
 
 
-def handle(ip, args) -> any:
+def handle(ip: str, args) -> dict:
     account: str = args["params[account]"]
     if unitpay_lib.provider.give_item(account):
         unitpay_lib.provider.update_payment_status(account, "SUCCESS")

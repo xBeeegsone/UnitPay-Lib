@@ -8,13 +8,13 @@ method_registry = {
 }
 
 
-def get_method(method) -> unitpay_method_handler:
+def get_method(method: str) -> unitpay_method_handler:
     if method not in method_registry:
         return None
     return method_registry[method]
 
 
-def handle(ip, args) -> any:
+def handle(ip: str, args) -> dict:
     from unitpay.protocol import unitpay_allowed_ips
     if ip not in unitpay_allowed_ips.ip_list:
         return unitpay_response.error("Неизвестный IP-Адрес, не принадлежащий UnitPay.")
