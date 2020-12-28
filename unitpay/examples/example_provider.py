@@ -18,5 +18,9 @@ def give_item(account: str) -> bool:
     return True
 
 
+def generate_payment_link(account: str, sum: float, desc: str) -> str:
+    return iprovider.generate_payment_link(account, sum, desc)
+
+
 class example_provider(iprovider):
     pass

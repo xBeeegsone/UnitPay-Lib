@@ -4,6 +4,7 @@ from unitpay.protocol import unitpay_request_controller
 
 unitpay_lib.provider = example_provider
 unitpay_lib.PUBLIC_KEY = "EXAMPLE-KEY-1337"
+unitpay_lib.PRIORITY_PAYMENT_METHOD = "card"
 
 controller: unitpay_request_controller = unitpay_request_controller
 
@@ -33,6 +34,8 @@ error = controller.handle("52.19.56.234", args={
     "params[errorMessage]": "Недостаточно средств"
 })
 
+link = unitpay_lib.provider.generate_payment_link("test", 1.00, "Покупка камней")
+
 
 print("")
 print("")
@@ -41,3 +44,6 @@ print("")
 print("check                        " + str(check))
 print("pay                          " + str(pay))
 print("error                        " + str(error))
+print("")
+print("")
+print("Платёжная ссылка: " + link)
