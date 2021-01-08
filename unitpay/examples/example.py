@@ -9,6 +9,15 @@ unitpay_lib.PRIORITY_PAYMENT_METHOD = "card"
 controller: unitpay_request_controller = unitpay_request_controller
 
 
+unknown = controller.handle("52.19.56.234", args={
+    "method": "unknown",
+    "params[account]": "test",
+    "params[sum]": 10.00,
+    "params[orderCurrency]": "RUB",
+    "params[orderSum]": 1.00
+})
+
+
 check = controller.handle("52.19.56.234", args={
     "method": "check",
     "params[account]": "test",
@@ -41,6 +50,7 @@ print("")
 print("")
 print("метод                        json-ответ")
 print("")
+print("неизвестный метод            " + str(unknown))
 print("check                        " + str(check))
 print("pay                          " + str(pay))
 print("error                        " + str(error))
